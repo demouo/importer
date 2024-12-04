@@ -146,11 +146,13 @@
 
     这个方法在什么文件下都适用，是万金油，然后推荐整个项目的引用方式都基于同一个立足点（一般就是根目录），更加井然有序
 
-- 插个题外话，如果你需要使用`pytest`，那么你得在和`tests`同级目录下添加`pytest.ini`，并指定`testpaths`
+- 插个题外话，如果你需要使用`pytest`，那么你得在和`tests`同级目录下添加`pytest.ini`，并指定`testpaths, pythonpath`，至于有些仓库没有指定`pythonpath`也能准确运行我就不得而知了
 
     ```ini
     [pytest]
-    testpaths = tests
+    testpaths = test
+    pythonpath = . # for import xx, 去掉这个就找不到包了
+
     ```
 
     然后也是在根目录下执行`pytest`, `pytest`会将执行路径当成入口，和我们预料的一样。
