@@ -150,7 +150,7 @@
 
     ```ini
     [pytest]
-    testpaths = test
+    testpaths = tests
     pythonpath = . # for import xx, 去掉这个就找不到包了
 
     ```
